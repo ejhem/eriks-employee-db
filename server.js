@@ -1,14 +1,16 @@
 const app = require('express');
 const mysql = require('mysql2');
-const inquirer = require('inquirer')
-const PORT = process.env.PORT || 3001;
+const inquirer = require('inquirer');
+const cTable = require('console.table');
+
 
 app.use(express.urlencoded ({ extended: false}));
 app.use(express.json());
 
-const db = mysql.createConnection(
+const connection = mysql.createConnection(
     {
         host: 'localhost',
+        port: 3306,
         user: 'root',
         password: 'Wh!$k3y88',
         database: 'employee_db'
